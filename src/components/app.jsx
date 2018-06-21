@@ -2,6 +2,9 @@ import React, { Component, Fragment } from 'react';
 import Home from './home.jsx'
 import Films from './film.jsx'
 import People from './people.jsx'
+import FilmID from './filmsID.jsx'
+import PeopleID from './peopleID.jsx'
+
 import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
 
 class App extends Component {
@@ -21,6 +24,8 @@ class App extends Component {
                         <Route exact path="/" component={Home} />
                         <Route exact path="/films" component={Films} />
                         <Route exact path="/characters" component={People} />
+                        <Route path="/film/id" component={FilmID} />
+                        <Route path="/people/id" component={PeopleID} />
                     </Switch>
                 </Fragment>
             </Router>

@@ -25,11 +25,14 @@ class People extends Component {
     render() {
         return (
             <React.Fragment>
-                {this.state.data.map(function (res) {
+                {this.state.data.map((res) => {
                     return (
-                            <div className="card bg-light m-4 rounded-0 shadow" key={res.id}>
-                                <div className="card-header bg-dark text-white rounded-0 shadow col-md-4">{res.name}</div>
+                        <div className="row">
+                            <div className="card-header bg-light m-4 col-6 d-flex mx-auto position-relative" key={res.id}>
+                                <div className="card-body bg-dark text-white">{res.name}<a href="" className="badge badge-light text-dark float-right">
+                                Details</a></div>
                             </div>
+                        </div>
                     )
                 })}
             </React.Fragment>

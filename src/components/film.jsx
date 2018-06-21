@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 const FILM_URL = 'https://ghibliapi.herokuapp.com/films'
 
 class Films extends Component {
@@ -27,10 +28,10 @@ class Films extends Component {
 
         return (
             <React.Fragment>
-                {this.state.data.map(function (res) {
+                {this.state.data.map((res) => {
                     return (
-                            <div className="card bg-light m-4 rounded-0 shadow" key={res.id}>
-                                <div className="card-header bg-dark text-white rounded-0 shadow bottom-0">{res.title}</div>
+                            <div className="card-header bg-light m-4 rounded-0 shadow col-md-6 d-flex mx-auto position-relative" key={res.id}>
+                                <div className="card-body bg-dark text-white rounded-0 shadow bottom-0">{res.title}<a F className="badge badge-light text-dark float-right">Details</a></div>
                             </div>
                     )
                 })}
