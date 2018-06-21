@@ -21,10 +21,17 @@ class People extends Component {
                 });
             })
         }
-        
+
     render() {
         return (
             <React.Fragment>
+                {this.state.data.map(function (res) {
+                    return (
+                            <div className="card bg-light m-4 rounded-0 shadow" key={res.id}>
+                                <div className="card-header bg-dark text-white rounded-0 shadow col-md-4">{res.name}</div>
+                            </div>
+                    )
+                })}
             </React.Fragment>
         )
     }

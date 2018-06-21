@@ -19,15 +19,25 @@ class Films extends Component {
                 this.setState({
                     data: res
                 });
-            })       
-      }
+            })
+    }
+
 
     render() {
+
         return (
             <React.Fragment>
+                {this.state.data.map(function (res) {
+                    return (
+                            <div className="card bg-light m-4 rounded-0 shadow" key={res.id}>
+                                <div className="card-header bg-dark text-white rounded-0 shadow bottom-0">{res.title}</div>
+                            </div>
+                    )
+                })}
             </React.Fragment>
         )
     }
 }
 
 export default Films
+
