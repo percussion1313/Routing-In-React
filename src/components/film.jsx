@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 
 
+import { BrowserRouter as Link } from 'react-router-dom'
+
+
 const FILM_URL = 'https://ghibliapi.herokuapp.com/films'
 
-class Films extends Component {
+class Film extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            data: []
+            data: [],
         }
     }
 
@@ -30,9 +33,13 @@ class Films extends Component {
             <React.Fragment>
                 {this.state.data.map((res) => {
                     return (
-                            <div className="card-header bg-light m-4 rounded-0 shadow col-md-6 d-flex mx-auto position-relative" key={res.id}>
-                                <div className="card-body bg-dark text-white rounded-0 shadow bottom-0">{res.title}<a F className="badge badge-light text-dark float-right">Details</a></div>
+                        <div className="card-header bg-light m-4 rounded-0 shadow col-md-6 d-flex mx-auto" key={res.id}>
+                            <div className="card-body bg-dark text-white rounded-0 shadow">{res.title}
+                                <Link to={`/film/${res.id}`}>
+                                    <button className="btn btn-light text-dark float-right rounded-0" >Details</button>
+                                </Link>
                             </div>
+                        </div>
                     )
                 })}
             </React.Fragment>
@@ -40,5 +47,5 @@ class Films extends Component {
     }
 }
 
-export default Films
+export default Film
 
