@@ -1,26 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom'
 
-
-class FilmID extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
-        return (
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title text-dark">Test</h5>
-                    <h6 className="card-subtitle mb-2 text-muted">Test</h6>
-                    <h6 className="card-subtitle mb-2 text-muted">Test</h6>
-                </div>
-            </div >
-        )
-
-    }
+let Film = ({filmData}) => {
+    return (
+        
+        <div>
+            <div className="card-header bg-light m-4 col-6 d-flex mx-auto position-relative">
+                <div className="card-body bg-dark text-white">{filmData.title}
+                
+                <Link key = {filmData} className="badge badge-light text-dark float-right" to={`/film/${filmData.id}`}>Details</Link> </div>
+                
+            </div>
+        </div>
+    )
 }
 
-
-
-export default FilmID
-
+export default Film

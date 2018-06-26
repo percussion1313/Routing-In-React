@@ -1,24 +1,24 @@
 import React, { Component } from 'react';
-import People from './peopleID';
+import Film from './filmID';
 
 
-const PEOPLE_URL = 'https://ghibliapi.herokuapp.com/people/'
+const FILM_URL = 'https://ghibliapi.herokuapp.com/films/'
 
-class Persons extends Component {
+class Films extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            people: [],
+            films: [],
         }
 
         this.componentDidMount = () => {
-            fetch(`${PEOPLE_URL}`)
+            fetch(`${FILM_URL}`)
                 .then((results) => {
                     return results.json()
                 }).then((data) => {
                     this.setState({
-                        people: data
+                        films: data
                     });
                 })
         }
@@ -27,21 +27,19 @@ class Persons extends Component {
     
 
     render() {
-        let peopleCards = this.state.people.map((person) => {
-            return <People key={person.id} peopleData={person} />
+        let filmCards = this.state.films.map((film) => {
+            return <Film key={film.id} filmData={film} />
         }
     )
         return (
             <React.Fragment>
-                <div>{peopleCards}</div>
+                <div>{filmCards}</div>
             </React.Fragment>
         )
     }
 }
 
-export default Persons
-
-
+export default Films
 
 
 

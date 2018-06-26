@@ -1,19 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
-
-
-const PeopleID = () => {
+let People = ({peopleData}) => {
     return (
-    
-        <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">Test</h5>
-            <h6 class="card-subtitle mb-2 text-muted">Test</h6>
-            <h6 class="card-subtitle mb-2 text-muted">Test</h6>
+        
+        <div>
+            <div className="card-header bg-light m-4 col-6 d-flex mx-auto position-relative">
+                <div className="card-body bg-dark text-white">{peopleData.name}
+                
+                <Link key = {peopleData} className="badge badge-light text-dark float-right" to={`/people/${peopleData.id}`}>Details</Link> </div>
+                
+            </div>
         </div>
-      </div >
     )
-   
 }
 
-export default PeopleID
+export default People
